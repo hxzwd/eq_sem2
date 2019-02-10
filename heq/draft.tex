@@ -1,0 +1,379 @@
+\documentclass[14pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\begin{document}
+\onehalfspacing
+\section{Уравнение Кортевега - де Вриза.}
+Уравнение Кортевега - де Вриза (КдВ) - это одно из многих нелинейных уравнений в частных производных (НУЧП). Оно является уравнением третьего порядка и имеет следующий вид: \newline
+$\frac{\partial u}{\partial t} - 6u \frac{\partial u}{\partial x} + \frac{\partial^3 u}{\partial x^3} = 0$
+\newline
+Где:\newline
+$u = u(x, t)$ - некоторая функция двух переменных (координата $x$ и время $t$). \newline
+Подробным образом это нелинейное уравнение в частных производных анализировалось в работе  Дидерика Кортевега и Густава де Вриза в 1895 году.
+\newline
+Данное уравнение может быть использовано для описания реальных физических процессов. Так, например, уравнение Кортевега - де Вриза описывает физический процесс распространения уединенных волн на воде, без учета явления диссипации энергии.
+\newline
+Для уравнения $\frac{\partial u}{\partial t} - 6u \frac{\partial u}{\partial x} + \frac{\partial^3 u}{\partial x^3} = 0$ получено большое количество точных решений, не смотря на то, что нелинейность уравнения Кортевега - де Вриза приводит к существенному усложению поиска решений аналитическими методами.
+\newline
+Среди решений данного уравнения имеются решения солитонного типа, то есть решения в виде уединненых устойчивых волн, которые не разрушаются при взаимодействии с другими волнами или с некоторыми другими возмущениями. Таким решением является, например, решение уравнения Кортевега - де Вриза следующего вида: \newline
+$u = u(x, t) = \frac{2k^2}{cosh^2 (k(x - 4k^2t - x_0)}$
+\newline
+Где:\newline
+$k$ - свободный параметр, \newline
+$x_0$ - произвольная константа. \newline
+Параметр $k$ - определяет высоту и ширину солитона. Кроме того, этот параметр задает скорость уединенной волны. \newline
+Произвольная константа $x_0$ зависит от выбора точки начала отсчёта пространственной координаты на оси $x$. \newline
+\newline
+%c = \sqrt{a^2 + b^2}
+%$
+%\newline
+\section{Иерархия Кортевега - де Вриза.}
+Приведенное уравнение Кортевега - де Вриза вида $\frac{\partial u}{\partial t} - 6u \frac{\partial u}{\partial x} + \frac{\partial^3 u}{\partial x^3} = 0$ является первым представителем так называемой иерархии уравнений Кортевега - де Вриза. \newline
+Эта иерархия задается следующим соотношением: \newline
+$u_t + \frac{\partial}{\partial x} L_{n + 1} [u] = 0$
+%\newline
+%$L_{n + 1} [u]$
+\newline
+Где: \newline
+$L_{n} [u]$ - оператора Ленарда. \newline
+Оператор Ленарда определяется следующим рекуррентным соотношением: \newline
+$
+\frac{\partial}{\partial x} L_{n + 1} [u] = (\frac{\partial^3}{\partial x^3} + 4 u \frac{\partial}{\partial x} + 2 \frac{\partial u}{\partial x}) L_{n} [u]
+$
+\newline
+Начальное условие для этого рекуррентного соотношения имеет вид: \newline
+$L_0 [u] = \frac{1}{2}$
+\newline
+При подстановке различных $n = 1, 2, 3, ...$ будут получены различные уравнения из иерархии Кортевега - де Вриза. \newline
+Порядки, получаемых нелинейных уравнений в частных производных согласно выражению $u_t + \frac{\partial}{\partial x} L_{n + 1} [u] = 0$ будут нечетными.
+\newline
+Найдем операторы Ленарда для $n = 0...7$.\newline
+Тогда получим: \newline
+$L_0 [u] = \frac{1}{2}$
+\newline
+$L_1 [u] = u$
+\newline
+$L_2 [u] = u_{xx} + 3 u^2$
+\newline
+$L_3 [u] = u_{xxxx} + 10uu_{xx} + 5 u_{x}^{2} + 10 u^3$
+\newline
+$L_4 [u] = u_{xxxxxx} + 14uu_{xxxx} + 28u_{x}u_{xxx} + 21u_{xx}^{2} + 70 u^2 u_{xx} + 70 u u_{x}^{2} + 35 u^4$
+\newline
+$L_5 [u] = u^{(8)}(x)+18 u^{(6)}(x) u(x)+69 u^{(3)}(x)^2+378 u(x) u''(x)^2+630 u(x)^2 u'(x)^2+54 u^{(5)}(x) u'(x)+6 u^{(4)}(x)(19 u''(x)+21 u(x)^2)+504 u^{(3)}(x) u(x) u'(x)+42(11 u'(x)^2+10 u(x)^3)u''(x)+126 u(x)^5$
+\newline
+$L_6[u] = u^{(10)}(x)+22 u^{(8)}(x) u(x)+253 u^{(4)}(x)^2+1518 u^{(3)}(x)^2 u(x)+4158 u(x)^2 u''(x)^2+1342u''(x)^3+4620 u(x)^3 u'(x)^2+1155 u'(x)^4+88 u^{(7)}(x) u'(x)+22 u^{(6)}(x) (11 u''(x)+9 u(x)^2)++462 u(x) (22 u'(x)^2+5 u(x)^3)u''(x)+22 u^{(5)}(x)(19 u^{(3)}(x)+54 u(x) u'(x))+66 u^{(4)}(x) (38 u(x) u''(x)+25u'(x)^2+14 u(x)^3)+132u^{(3)}(x) u'(x) (43 u''(x)+42u(x)^2)+462 u(x)^6$
+\newline
+$L_7[u] = u^{(12)}(x)+26 u^{(10)}(x) u(x)+923 u^{(5)}(x)^2+6578 u^{(4)}(x)^2 u(x)+34892 u(x) u''(x)^3+30030 u(x)^4u'(x)^2+30030u(x) u'(x)^4+130 u^{(9)}(x) u'(x)+26 u^{(8)}(x) (17 u''(x)+11 u(x)^2)+858 u^{(3)}(x)^2(31 u''(x)+23u(x)^2)+12012 u(x)^2 (11 u'(x)^2+u(x)^3) u''(x)+858 (83 u'(x)^2+42 u(x)^3) u''(x)^2+52 u^{(7)}(x)(19 u^{(3)}(x)+44 u(x) u'(x))+3432 u^{(3)}(x) u'(x)(43 u(x) u''(x)+10 u'(x)^2+14 u(x)^3)+26 u^{(6)}(x)(61 u^{(4)}(x)+242 u(x) u''(x)+165 u'(x)^2+66 u(x)^3)+572 u^{(5)}(x) (19 u^{(3)}(x) u(x)+27 u(x)^2 u'(x)+36 u'(x)u''(x))+858 u^{(4)}(x)(38 u(x)^2 u''(x)+25 u''(x)^2+50 u(x) u'(x)^2+36 u^{(3)}(x) u'(x)+7 u(x)^4)+1716 u(x)^7$
+\newline
+\section{Уравнения из иерархии Кортевега - де Вриза в переменных бегущей волны.}
+Пусть решения уравнений из иерархии Кортевега - де Вриза будут иметь следующий вид:
+$u = u(x) = u(x - C t)$ \newline
+Где: \newline
+$C$ - некоторая константа. \newline
+Тогда подстановка переменных бегущей волны в уравнения с последующим домножением их на $u_x$ и интегрированием приводит к уравнениями из иерархии Кортевега - де Вриза следующего вида: \newline
+$L_{n} [u] - C_{n}^{(0)} u + C_{n}^{(1)} = 0$ \newline
+Где:
+$C_{n}^{(0)}$ и $C_{n}^{(1)}$ - некоторые константы. \newline
+Переобозначим константы $C_{n}^{(0)}$ и $C_{n}^{(1)}$, как $A_n$ и $B_n$ и получим уравнения следующего вида: \newline
+$L_{n} [u] - A_{n} u + B_{n} = 0$
+\newline
+$E_{n} [u] = L_{n} [u] - A_{n} u + B_{n} = 0$
+\newline
+Для $n = 2$ и $n = 3$ уравнения $E_2 [u]$ и $E_3[u]$ имеют следующий конкретный вид: \newline
+$E_{2} [u] = u_{xx} + 3 u^2 - A_{2} u + B_{2} = 0$
+\newline
+$E_{3} [u] = u_{xxxx} + 10uu_{xx} + 5 u_{x}^{2} + 10 u^3 - A_{3} u + B_{3} = 0$
+\newline
+\section{Постановка задачи.}
+%\newline
+%\newline
+%$\text{"_________________________________________________________"}$
+Требуется проверить существование связи в виде некоторого оператора $\widehat{A}$ между уравнениями из иерархии Кортевега - де Вриза для $n$ и $n + 1$. При этом, если предполагаемый оператор существует, то значит можно определить связь между решениями уравнений из иерархии Кортевега - де Вриза, заключающуюся в том, что некоторые решения уравнений для $n$ могут быть найдены, как решения уравнений для $k < n$. \newline
+\section{Построение оператора $\widehat{A}$ для уравнений $E_2 [u]$ и $E_3 [u]$.}
+Рассмотрим сначала случай связи между уравнениями $E_2 [u]$ и $E_3 [u]$. \\
+Тогда: \\
+$E_{3}[u] = \widehat{A} E_{2}[u]$
+\newline
+Распишем уравнения $E_2 [u]$ и $E_3 [u]$. \\
+$u_{xxxx} + 10uu_{xx} + 5 u_{x}^{2} + 10 u^3 - A_{3} u + B_{3} = \widehat{A}(u_{xx} + 3 u^2 - A_{2} u + B_{2})$
+\newline
+В левой части выражения максимальный порядок производной равен четырем, в правой части выражения максимальный порядок равен двум, для того чтобы исключить слагаемое вида $u_{xxxx}$ из правой части в операторе $\widehat{A}$ необходима составляющая вида $\frac{\partial^2}{\partial x^2}$. Тогда:
+\newline
+$u_{xxxx} = \frac{\partial^2}{\partial x^2} u_{xx} =>$
+\newline
+Оператор $\widehat{A}$ без составляющей вида $\frac{\partial^2}{\partial x^2}$ обозначим за $\widehat{B}$. Таким образом: \\ 
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + \dots = \frac{\partial^2}{\partial x^2} + \widehat{B}$
+\newline
+Подействуем оператором $\widehat{A} - \widehat{B} = \frac{\partial^2}{\partial x^2}$ на уравнение $E_2[u]$. Получим следующее выражение: \\
+$\frac{\partial^2}{\partial x^2} E_{2} [u] = \frac{\partial^2}{\partial x^2} (u_{xx} + 3 u^2 - A_{2} u + B_{2}) = u_{xxxx} + 3 \frac{\partial}{\partial x} (2uu_{x}) - A_2 u_{xx} = u_{xxxx} + 6u_{x}^{2} + 6uu_{xx} - A_{2}u_{xx}$
+\newline
+С помощью полученного выражения перейдем от оператора $\widehat{A}$ к оператору $\widehat{B}$.
+\newline
+$E_{3} [u] - \frac{\partial^2}{\partial x^2} E_{2} [u] = \widehat{B} E_{2}[u]$ \\
+Выполним подстановку соответствующих уравнений. 
+\newline
+$u_{xxxx} + 10uu_{xx} + 5u_{x}^{2} + 10u^3 - A_{3} u + B_{3} - u_{xxxx} - 6u_{x}^{2} - 6uu_{xx} + A_{2} u_{xx} = \widehat{B} E_{2} [u]$
+\newline
+После упрощения получим: \\
+$4uu_{xx} - u_{x}^{2} + 10u^3 - A_{3}u + A_{2}u_{xxx} + B_{3} = \widehat{B} E_{2} [u]$
+\newline
+Анализ полученного выражения и уравнения $E_2 [u]$ показывает, что для того, чтобы исключить слагаемое вида $4uu_{xx}$ из правой части выражения $4uu_{xx} - u_{x}^{2} + 10u^3 - A_{3}u + A_{2}u_{xxx} + B_{3} = \widehat{B} E_{2} [u]$, в операторе $\widehat{B}$ необходимо слагаемое вида $4u$.\\
+Следовательно: \\
+$\widehat{B} = 4u + \dots = 4u + \widehat{C}$
+\newline
+$4uE_{2} [u] = 4uu_{xx} + 12u^3 - 4A_{2}u^2 + 4uB_{2}$
+\newline
+Перейдем к введенному оператору $\widehat{C}$. \\
+$\widehat{B}E_{2} [u] - 4uE_{2}[u] = \widehat{C} E_{2} [u]$
+\newline
+$\widehat{C} E_{2} [u] = 4uu_{xx} - u_{x}^{2} + 10u^3 - A_{3} u + A_{2} u_{xx} + B_{3} - 4uu_{xx} - 12u^3 + 4A_{2}u^2 - 4B_{2}u = -u_{x}^{2} - 2u^3 - (A_{3} + 4B_{2})u + 4A_{2}u^2 + A_{2}u_{xx} + B_{3}$
+\newline
+$A_{2}u_{xx} - u_{x}^{2} - 2u^3 + 4A_{2}u^2 - (A_{3} + 4B_{2})u + B_{3} = \widehat{C}(u_{xx} + 3u^2 - A_{2}u + B_{2})$
+\newline
+Далее, рассуждая аналогичным образом, придем к следующему выводу: \\
+$\widehat{C} = A_{2} + \widehat{D}$
+\newline
+Выполним переход к оператору $\widehat{D}$. \\
+\newline
+$\widehat{D} E_{2} [u] = \widehat{C} E_2 [u] - A_{2} E_2 [u]$
+\newline
+$\widehat{D} E_{2} [u] = A_{2} u_{xx} - A_{2} u_{xx} - u_{x}^{2} + 4A_{2}u^{2} - 3A_{2}u^{2} - (A_{3} + 4B_{2})u + A_{2}^{2} u + B_{3} - A_{2} B_{2} - 2u^3$
+\newline
+$\widehat{D} E_{2} [u] = -u_{x}^{2} - 2u^3 + A_{2}u^2 + (A_{2}^{2} - A_3 - 4B_2)u + (B_3 - A_{2}B_{2})$
+\newline
+На данном этапе, в правой части выражения $\widehat{D} E_{2} [u] = -u_{x}^{2} - 2u^3 + A_{2}u^2 + (A_{2}^{2} - A_3 - 4B_2)u + (B_3 - A_{2}B_{2})$ порядок производной по $x$ меньше, чем в уравнении $E_2 [u]$, поэтому для того, чтобы продолжить исключение кроме дифференциальных и константных сооставляющих в оператор $\widehat{A}$ требуется ввести интегральную составляющую.
+\newline
+Введем интегальную составляющую в оператор $\widehat{A}$ следующим образом: \\
+$L_{2} [u] = u_{xx} + 3u^2$
+\newline
+$2u_{x}L_{2} [u] dx = (2u_{x}u_{xx} + 6u^2 u_{x})dx$
+\newline
+$2 \int u_{x} L_{2} [u] dx = u_{x}^{2} + 2u^3 + C$
+\newline
+$\widehat{D} = -2 \int u_{x} <.> dx + \widehat{E}$
+\newline
+$(\widehat{D} - \widehat{E})L_{2} [u] = -2 \int u_{x} <.> dx (u_{xx} + 3u^2 - A_{2} u + B_2)$
+\newline
+$-2 \int u_{x} <.> dx (u_{xx} + 3u^2 - A_{2} u + B_2) = -2 \int [u_{x}u_{xx} + 3u^2 u_x - A_2 u u_x + B_2 u_x]dx = $
+%\newline
+$ = -2 [ \frac{u_{x}^{2}}{2} + u^3 - \frac{A_2 u^2}{2} + B_2 u] + C = $
+%\newline
+$ = -u_{x}^{2} - 2u^3 + A_{2} u^2 - 2B_{2} u + C$
+\newline
+$\widehat{E}L_{2} [u] = \widehat{E} (u_{xx} + 3u^2 - A_2 u + B_2) = $
+%\newline
+$ = (A_{2}^{2} - A_{3} - 4B_2)u + 2B_2 u + (B_3 - A_2 B_2) - C$
+Таким образом получим окончательный вид: \\
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u + A_{2} - 2 \int u_x <.> dx + \widehat{E}$
+\newline
+$E_3 [u] = \left\lbrace \frac{\partial^2}{\partial x^2} + 4u + A_{2} - 2 \int u_x <.> dx \right\rbrace E_2 [u] + (A_{2}^{2} - A_{3} - 2B_2)u + (B_3 - A_2 B_2) - C$
+\newline
+$E_3 [u] = \left\lbrace \frac{\partial^2}{\partial x^2} + 4u + A_{2} - 2 \int u_x <.> dx \right\rbrace E_2 [u] +
+pu(x) + q$
+\newline
+$p = A_{2}^{2} - A_{3} - 2B_2$
+\newline
+$q = B_3 - A_2 B_2 - C$
+\newline
+В полученном выражении присутствует часть, линейная относительно функции $u = u(x)$. Коэффициенты этой линейной части зависят от коэффициентов самих уравнений $E_2 [u] $ и $E_3 [u]$. При правильном выборе этих коэффициентов, все решения уравнения $E_2 [u] $ будут являться решениями уравнения $E_3 [u]$.
+\newline
+\section{Построение оператора $\widehat{A}$ для уравнений $E_n [u]$, где $n = 4..7$.}
+Для построения оператора $\widehat{A}$ связи между уравнениями из иерархии Кортевега - де Вриза более высоких порядок был написан скриптовый сценраий для пакета Wolfram Mathematica. \\
+Код написанного скриптового сценария: \\
+\begin{verbatim}
+Print["eq.wl script file\n"];
+
+
+L0 = 1/2;
+L1 = u[x];
+
+DL2 = D[L1, {x, 3}] + 4*u[x]*D[L1, x] + 2*D[u[x], x]*L1;
+L2 = Integrate[DL2, x];
+DL3 = D[L2, {x, 3}] + 4*u[x]*D[L2, x] + 2*D[u[x], x]*L2;
+L3 = Integrate[DL3, x];
+DL3 = D[L3, {x, 3}] + 4*u[x]*D[L3, x] + 2*D[u[x], x]*L3;
+L4 = Integrate[DL3, x];
+DL5 = D[L4, {x, 3}] + 4*u[x]*D[L4, x] + 2*D[u[x], x]*L4;
+L5 = Integrate[DL5, x];
+DL6 = D[L5, {x, 3}] + 4*u[x]*D[L5, x] + 2*D[u[x], x]*L5;
+L6 = Integrate[DL6, x];
+DL7 = D[L6, {x, 3}] + 4*u[x]*D[L6, x] + 2*D[u[x], x]*L6;
+L7 = Integrate[DL7, x];
+
+
+E2 = L2 - A2*u[x] + B2;
+E3 = L3 - A3*u[x] + B3;
+E4 = L4 - A4*u[x] + B4;
+E5 = L5 - A5*u[x] + B5;
+E6 = L6 - A6*u[x] + B6;
+E7 = L7 - A7*u[x] + B7;
+
+Print[L0];
+Print[L1];
+Print[L2];
+Print[L3];
+Print[L4];
+Print[L5];
+
+OP[L_[x]] := D[L[x], {x, 3}] + 4*u[x]*D[L[x], x] + 2*D[u[x], x]*L[x];
+
+
+tmp1 = E4 - D[E3, {x, 2}];
+tmp2 = tmp1 - 4*u[x]*E3;
+tmp3 = tmp2 - A3*E3;
+tmp33 = tmp2 + Integrate[Expand[2*u'[x]*E3], x]
+
+
+tmp1 = Expand[tmp1];
+tmp2 = Expand[tmp2];
+tmp3 = Expand[tmp3];
+tmp33 = Expand[tmp33];
+
+
+a1 = E3 - D[E2, {x, 2}];
+a2 = a1 - 4*u[x]*E2;
+a3 = a2 + Integrate[Expand[2*u'[x]*E2], x];
+a4 = a3 - A2*E2;
+a3 = Simplify[Expand[a3]];
+a4 = Simplify[Expand[a4]];
+
+
+t1 = E5 - D[E4, {x, 2}];
+t2 = t1 - 4*u[x]*E4;
+t3 = t2 + Integrate[Expand[2*u'[x]*E4], x];
+t3 = Expand[t3];
+t4 = Simplify[Expand[t3 - A4*E2]];
+
+b1 = E6 - D[E5, {x, 2}];
+b2 = b1 - 4*u[x]*E5;
+b3 = b2 + Integrate[Expand[2*u'[x]*E5], x];
+b3 = Simplify[Expand[b3]];
+b4 = Simplify[Expand[b3 - A5*E2]];
+
+c1 = E7 - D[E6, {x, 2}];
+c2 = c1 - 4*u[x]*E6;
+c3 = c2 + Integrate[Expand[2*u'[x]*E6], x];
+c3 = Simplify[Expand[c3]];
+c4 = Simplify[Expand[c3 - A6*E2]];
+
+e1 = E4 - D[E3, {x, 2}];
+e2 = e1 - 4*u[x]*E3;
+e3 = e2 + Integrate[Expand[2*u'[x]*E3], x];
+e3 = Simplify[Expand[e3]];
+e4 = Simplify[Expand[e3 - A3*E2]];
+\end{verbatim}
+\section{Построение оператора $\widehat{A}$ для уравнений $E_3 [u] $ и $E_4 [u]$.}
+Рассмотрим построение оператора $\widehat{A}$ для связи уравнений $E_3 [u] $ и $E_4 [u]$:
+\newline
+$
+E_3[u] = u_{xxxx} + 10u u_x + 5 u_{x}^{2} + 10u^3 - A_{3} u + B_{3}
+$
+\newline
+$E_4[u] = u_{xxxxxx} + 14uu_{xxxx} + 28u_{x}u_{xxx} + 21u_{xx}^{2} + 70 u^2 u_{xx} + 70 u u_{x}^{2} + 35 u^4 - A_{4} u + B_{4}$
+\newline
+$ E_4[u] = \widehat{A} E_3[u]$
+\newline
+\newline
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx + \widehat{B}$
+\newline
+\newline
+1. $E_4[u] - \frac{\partial^2}{\partial x^2} E_3[u] = 
+   \text{A3} u''(x)-\text{A4} u(x)+\text{B4}+4 u^{(4)}(x) u(x)+40
+    u(x)^2 u''(x)+u''(x)^2+10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)+35
+    u(x)^4$
+\newline
+\newline
+2. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u \right\rbrace E_3[u] = \text{A3} u''(x)+4 \text{A3} u(x)^2-\text{A4} u(x)-4 \text{B3}
+    u(x)+\text{B4}+u''(x)^2-10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)-5
+    u(x)^4$
+%$   \text{A3}^2 u(x)-\text{A3} \text{B3}-\text{A3} u^{(4)}(x)-10
+%    \text{A3} u(x) u''(x)+\text{A3} u''(x)-5 \text{A3} u'(x)^2-10
+%    \text{A3} u(x)^3+4 \text{A3} u(x)^2-\text{A4} u(x)-4 \text{B3}
+%    u(x)+\text{B4}+u''(x)^2-10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)-5
+%    u(x)^4$
+\newline
+\newline
+3. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx \right\rbrace E_3[u] =  \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+\newline
+4. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx \right\rbrace E_3[u] - \text{A3} E_2[u] = \text{A2} \text{A3} u(x)-\text{A3} \text{B2}-\text{A4} u(x)-2
+    \text{B3} u(x)+\text{B4} = u(x) (\text{A2} \text{A3}-\text{A4}-2 \text{B3})-\text{A3}
+    \text{B2}+\text{B4}$
+\newline
+\newline
+5. $\widehat{B}E_3 [u] = \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+$\widehat{B} (u_{xxxx} + 10u u_x + 5 u_{x}^{2} + 10u^3 - A_{3} u + B_{3}) = \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+\newline
+\section{Связь коэффициентов $A_n$ и $B_n$ уравнений иерархии Кортевега - де Вриза}
+В общем случае для уравнений $E_{n} [u] $ и $E_{n + 1} [u]$ имеем: \\
+$E_{n + 1} [u] = \widehat{A} E_n [u] + A_n E_2 [u] + p_n + q_n u(x)$
+\newline
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx$
+\newline
+Рассмотрим $p_n + q_n u(x)$ для $n = 2..6$. Тогда:\\
+n = 2. $u(x) \left(\text{A2}^2-\text{A3}-2 \text{B2}\right)-\text{A2} \text{B2}+\text{B3}$
+\newline
+n = 3. $u(x) (\text{A2} \text{A3}-\text{A4}-2 \text{B3})-\text{A3} \text{B2}+\text{B4}$
+\newline
+n = 4. $u(x) (\text{A2} \text{A4}-\text{A5}-2 \text{B4})-\text{A4} \text{B2}+\text{B5}$
+\newline
+n = 5. $u(x) (\text{A2} \text{A5}-\text{A6}-2 \text{B5})-\text{A5} \text{B2}+\text{B6}$
+\newline
+n = 6. $u(x) (\text{A2} \text{A6}-\text{A7}-2 \text{B6})-\text{A6} \text{B2}+\text{B7}$
+\\
+Имеем два следующих уравнения:\\
+\begin{equation*}
+\begin{cases}
+E_3 [u] = L_3 [u] - A_3 u(x) + B_3 = 0, \\
+E_2 [u] = L_2 [u] - A_2 u(x) + B_2 = 0;.
+\end{cases}
+\end{equation*}
+Пусть $u = u(x)$ - решение уравнения $E_2 [u] = 0$. Следовательно.\\
+$E_3[u] = \widehat{A}E_2 [u] +A_2 E_2 [u] + p_2 + q_2 u(x)$ \\
+$E_3[u] = p_2 + q_2 u(x)$ \\
+Если:
+\begin{equation*}
+\begin{cases}
+p_2 = 0, \\
+q_2 = 0;.
+\end{cases}
+\end{equation*} \\
+Тогда $u = u(x)$ - решение уравнения $E_3 [u] = 0$. \\
+Раскроем выражения $p_2$ и $q_2$.\\
+\begin{equation*}
+\begin{cases}
+p_2 = A_2 A_2 - A_3 - 2B_2 = 0, \\
+q_2 = B_3 - A_2 B_2 = 0;.
+\end{cases}
+\end{equation*}
+\begin{equation*}
+\begin{cases}
+A_3 = A_2 A_2 - 2B_2, \\
+B_3 = A_2 B_2;.
+\end{cases}
+\end{equation*} \\
+Подставим значения $A_3$ и $B_3$ выраженные через $A_2$ и $B_2$ в выражение для уравнения $E_3 [u] = L_3 [u] - A_3 u(x) + B_3 = 0$. Тогда:\\
+$E_3 [u] = L_3 [u] - (A_2 - 2B_2) u(x) + A_2 B_2 = 0$. \\
+Функция $u = u(x)$ - решение для уравнения $E_3 [u] = 0$ с такими коэффициентами. \\
+Аналогичные действия можно проделать для уравнений $E_n [u] = 0$, где $n$ больше $3$. \\
+Например, для уравнения $E_4 [u] = 0$ имеем: \\
+\begin{equation*}
+\begin{cases}
+A_4 = A_2 A_3 - 2B_3 = A_2 (A_{2}^{2} - 2B_2) - 2A_2 B_2, \\
+B_4 = A_3 B_2 = (A_{2}^{2} - 2B_2) B_2;
+\end{cases}
+\end{equation*}
+$E_4 [u] = L_4 [u] - A_2 ((A_{2}^{2} - 2B_2) - 2B_2) u(x) + (A_{2}^{2} - 2B_2) B_2$ \\
+\section{Заключение}
+Для уравнений из иерархии Кортевега - де Вриза до $E_7 [u] = 0$, при решении в переменных бегущей волны, найдена связь вида: \\
+$E_{n + 1} [u] = \widehat{A} E_n [u] + A_n E_2 [u] + p_n + q_n u(x)$, где:\\
+$\widehat{A}$ - интегрально-дифференциальный оператор, который может быть записан следующим образом: \\
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx$
+\end{document}

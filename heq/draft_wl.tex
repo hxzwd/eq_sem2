@@ -1,0 +1,69 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+Equations and operator $\widehat{A}$:
+\newline
+$
+E_3[u] = u_{xxxx} + 10u u_x + 5 u_{x}^{2} + 10u^3 - A_{3} u + B_{3}
+$
+\newline
+$E_4[u] = u_{xxxxxx} + 14uu_{xxxx} + 28u_{x}u_{xxx} + 21u_{xx}^{2} + 70 u^2 u_{xx} + 70 u u_{x}^{2} + 35 u^4 - A_{4} u + B_{4}$
+\newline
+$ E_4[u] = \widehat{A} E_3[u]$
+\newline
+\newline
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx + \widehat{B}$
+\newline
+\newline
+1. $E_4[u] - \frac{\partial^2}{\partial x^2} E_3[u] = 
+   \text{A3} u''(x)-\text{A4} u(x)+\text{B4}+4 u^{(4)}(x) u(x)+40
+    u(x)^2 u''(x)+u''(x)^2+10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)+35
+    u(x)^4$
+\newline
+\newline
+2. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u \right\rbrace E_3[u] = \text{A3} u''(x)+4 \text{A3} u(x)^2-\text{A4} u(x)-4 \text{B3}
+    u(x)+\text{B4}+u''(x)^2-10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)-5
+    u(x)^4$
+%$   \text{A3}^2 u(x)-\text{A3} \text{B3}-\text{A3} u^{(4)}(x)-10
+%    \text{A3} u(x) u''(x)+\text{A3} u''(x)-5 \text{A3} u'(x)^2-10
+%    \text{A3} u(x)^3+4 \text{A3} u(x)^2-\text{A4} u(x)-4 \text{B3}
+%    u(x)+\text{B4}+u''(x)^2-10 u(x) u'(x)^2-2 u^{(3)}(x) u'(x)-5
+%    u(x)^4$
+\newline
+\newline
+3. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx \right\rbrace E_3[u] =  \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+\newline
+4. $E_4[u] - \left\lbrace \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx \right\rbrace E_3[u] - \text{A3} E_2[u] = \text{A2} \text{A3} u(x)-\text{A3} \text{B2}-\text{A4} u(x)-2
+    \text{B3} u(x)+\text{B4} = u(x) (\text{A2} \text{A3}-\text{A4}-2 \text{B3})-\text{A3}
+    \text{B2}+\text{B4}$
+\newline
+\newline
+\newline
+$\widehat{B}E_3 [u] = \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+$\widehat{B} (u_{xxxx} + 10u u_x + 5 u_{x}^{2} + 10u^3 - A_{3} u + B_{3}) = \text{A3} u''(x)+3 \text{A3} u(x)^2-\text{A4} u(x)-2 \text{B3}u(x)+\text{B4}$
+\newline
+\newline
+\newline
+\newline
+$E_{n + 1} [u] = \widehat{A} E_n [u] + A_n E_2 [u] + p_n + q_n u(x)$
+\newline
+$\widehat{A} = \frac{\partial^2}{\partial x^2} + 4u - 2 \int u_{x} <.> dx$
+\newline
+$p_n + q_n u(x)$:(n = )
+\newline
+2. $u(x) \left(\text{A2}^2-\text{A3}-2 \text{B2}\right)-\text{A2} \text{B2}+\text{B3}$
+\newline
+3. $u(x) (\text{A2} \text{A3}-\text{A4}-2 \text{B3})-\text{A3} \text{B2}+\text{B4}$
+\newline
+4. $u(x) (\text{A2} \text{A4}-\text{A5}-2 \text{B4})-\text{A4} \text{B2}+\text{B5}$
+\newline
+5. $u(x) (\text{A2} \text{A5}-\text{A6}-2 \text{B5})-\text{A5} \text{B2}+\text{B6}$
+\newline
+6. $u(x) (\text{A2} \text{A6}-\text{A7}-2 \text{B6})-\text{A6} \text{B2}+\text{B7}$
+
+\end{document}
