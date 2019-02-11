@@ -1,0 +1,52 @@
+
+\documentclass[12pt,a4paper,draft]{letter}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{cmap}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace} 
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+\onehalfspacing
+Уравнение для эллиптических функций Вейерштрасса (1):
+\\
+$E_R [R(z)] = \left(\dfrac{dR(z)}{dz}\right)^2 - 4R^3(z) - aR^2(z) - bR(z) - c = 0$
+\\
+Уравнение Риккати (2):
+\\
+$E_Y [Y(z)] = \dfrac{dY(z)}{dz} + Y^2(z) - \beta = 0$
+\\
+Хотим выразить решения $E_R [R(z)] = 0$ через решения уравнения $E_Y [Y(z)] = 0$
+\\
+Порядок полюса уравнения $E_R [R(z)] = 0$:
+\\
+$p = 2$
+\\
+Тогда решение $E_R [R(z)] = 0$ выражается через решения уравнения $E_Y [Y(z)] = 0$
+\\
+следующим образом:
+\\
+$R(z) = A_0 + A_1 Y(z) + A_2 Y^2(z)$
+\\
+Требуется найти коэффициенты: $A_0, A_1, A_2$
+\\
+Выполняем подстановку $R(z) = A_0 + A_1 Y(z) + A_2 Y^2(z)$ в уравнение $E_R [R(z)] = 0$.
+\\
+После подстановки член уравнения (1) $\left(\dfrac{dR(z)}{dz}\right)^2$ породит производную $ \dfrac{dY(z)}{dz}$ функии $Y(z)$.
+\\
+Выразим из уравнения (2) проивзодную $ \dfrac{dY(z)}{dz}$ и подставим в соответствующее выражение.
+\\
+Получим полином шестой степени относительно функции $Y(z)$:
+\\
+$P(Y(z), A_0, A_1, A_2, a, b, c, \beta) = 0$
+\\
+Для того, чтобы он был равен нулю необходимо, чтобы были равны нулю коэффициенты при всех степенях $Y(z)$.
+\\
+Выпишем коэффициенты при разных степенях $Y(z)$:
+\\
+
+
+\end{document}
